@@ -62,8 +62,3 @@ fun Main(
     }
 }
 
-//@Preview
-//@Composable
-//fun Preview() {
-//    Main()
-//}
