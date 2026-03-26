@@ -24,10 +24,12 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
+fun Main() {
 
+}
 
-@Preview(showBackground = true)
+@Preview
 @Composable
 fun Preview() {
-
+    Main()
 }
