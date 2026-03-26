@@ -2,8 +2,6 @@
 
 Gruppemedlemmer: Kai, Nina, Johnna, Victor
 
-![Prototype design](readme-images/test.jpg)
-
 Liste af features:
 - [ ] Main page 
   - [ ] Ugens Expert Box
@@ -16,5 +14,7 @@ Liste af features:
   - [ ] Like Knap
   - [ ] Styling
 
-- [ ] Archive Screen
+- [x] Archive Screen
   - Skal kopieres fra expert screen når den er done!
+
+![Prototype design](readme-images/test.jpg)
