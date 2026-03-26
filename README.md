@@ -14,7 +14,7 @@ Liste af features:
   - [ ] Like Knap
   - [ ] Styling
 
-- [x] Archive Screen
+- [ ] Archive Screen
   - Skal kopieres fra expert screen når den er done!
 
 ![Prototype design](readme-images/test.jpg)
