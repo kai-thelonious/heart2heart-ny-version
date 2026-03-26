@@ -2,3 +2,4 @@
 
 Gruppemedlemmer: Kai, Nina, Johnna, Victor
 
+![Prototype design](readme-images/test.jpg)
