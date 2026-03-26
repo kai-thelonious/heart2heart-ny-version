@@ -39,7 +39,6 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MainFun() {
-
     LazyColumn(
         modifier = Modifier
             .padding(40.dp),
@@ -81,8 +80,3 @@ fun MainFun() {
 
 }
 
-//@Preview
-//@Composable
-//fun PreviewMain() {
-//    //Main()
-//}
