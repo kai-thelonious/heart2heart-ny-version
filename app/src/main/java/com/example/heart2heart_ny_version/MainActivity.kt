@@ -26,8 +26,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.font.FontWeight.Companion.Light
+import androidx.compose.ui.text.font.FontWeight.Companion.Medium
+import androidx.compose.ui.text.font.FontWeight.Companion.SemiBold
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.heart2heart_ny_version.ui.theme.Heart2heartnyversionTheme
 
 class MainActivity : ComponentActivity() {
@@ -41,6 +48,16 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+val OverskriftBG = FontFamily(
+    Font(R.font.bricolage_grotesque_extralight, FontWeight.ExtraLight),
+    Font(R.font.bricolage_grotesque_light, FontWeight.Light),
+    Font(R.font.bricolage_grotesque_regular, FontWeight.Normal),
+    Font(R.font.bricolage_grotesque_medium, FontWeight.Medium),
+    Font(R.font.bricolage_grotesque_semibold, FontWeight.SemiBold),
+    Font(R.font.bricolage_grotesque_bold, FontWeight.Bold),
+    Font(R.font.bricolage_grotesque_extrabold, FontWeight.ExtraBold)
+)
+
 // val mainColor =
 
 @Composable
@@ -51,10 +68,25 @@ fun MainFun() {
 
         ) {
         item() {
-            Text("Brevkasse")
+            Text(
+                modifier = Modifier,
+                text = "Brevkasse",
+                color = Color.Black,
+                fontSize = 48.sp,
+                fontFamily = OverskriftBG,
+                fontWeight = FontWeight.Bold
+            )
+
         }
         item() {
-            Text("Ugens ekspert")
+            Text(
+                modifier = Modifier,
+                text = "Ugens ekspert",
+                color = Color.Black,
+                fontSize = 20.sp,
+                fontFamily = OverskriftBG,
+                fontWeight = FontWeight.SemiBold
+            )
         }
         item() {
 
