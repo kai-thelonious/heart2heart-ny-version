@@ -41,7 +41,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-// val mainColor =
+val mainColor = Color(0xFFF39FC2)
 
 @Composable
 fun MainFun() {
@@ -71,7 +71,7 @@ fun ExpertOfTheWeek() {
         modifier = Modifier
             .fillMaxWidth()
             .height(207.dp)
-            .background(color = Color.White)
+            .background(color = mainColor)
             .clickable { /* Action */ }
     ) {
         Row(
