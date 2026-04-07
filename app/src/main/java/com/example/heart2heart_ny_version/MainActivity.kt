@@ -29,8 +29,16 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.font.FontWeight.Companion.Light
+import androidx.compose.ui.text.font.FontWeight.Companion.Medium
+import androidx.compose.ui.text.font.FontWeight.Companion.SemiBold
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.example.heart2heart_ny_version.ui.theme.Heart2heartnyversionTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,6 +52,17 @@ class MainActivity : ComponentActivity() {
 }
 
 val mainColor = Color(0xFFF39FC2)
+val OverskriftBG = FontFamily(
+    Font(R.font.bricolage_grotesque_extralight, FontWeight.ExtraLight),
+    Font(R.font.bricolage_grotesque_light, FontWeight.Light),
+    Font(R.font.bricolage_grotesque_regular, FontWeight.Normal),
+    Font(R.font.bricolage_grotesque_medium, FontWeight.Medium),
+    Font(R.font.bricolage_grotesque_semibold, FontWeight.SemiBold),
+    Font(R.font.bricolage_grotesque_bold, FontWeight.Bold),
+    Font(R.font.bricolage_grotesque_extrabold, FontWeight.ExtraBold)
+)
+
+// val mainColor =
 
 @Composable
 fun MainFun() {
@@ -53,20 +72,34 @@ fun MainFun() {
 
         ) {
         item() {
-            Text("Brevkasse")
+            Text(
+                modifier = Modifier,
+                text = "Brevkasse",
+                color = Color.Black,
+                fontSize = 48.sp,
+                fontFamily = OverskriftBG,
+                fontWeight = FontWeight.Bold
+            )
+
         }
         item() {
-            Text("Ugens ekspert")
+            Text(
+                modifier = Modifier,
+                text = "Ugens ekspert",
+                color = Color.Black,
+                fontSize = 20.sp,
+                fontFamily = OverskriftBG,
+                fontWeight = FontWeight.SemiBold
+            )
         }
         item() {
 
             ExpertOfTheWeekCard()
         }
-
     }
 
-}
 
+}
 @Composable
 fun ExpertOfTheWeekCard() {
     Box(
@@ -82,6 +115,7 @@ fun ExpertOfTheWeekCard() {
             horizontalArrangement = Arrangement.spacedBy(16.dp),
 
         ) {
+
             Image(
                 painter = painterResource(id = R.drawable.linda_p),
                 contentDescription = "Picture of this week's expert", // Important for screen readers
