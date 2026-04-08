@@ -70,8 +70,14 @@ fun MainScreen(navController: NavController) {
         }
         item { PreviousExpertCard("Ask Oprah!", R.drawable.oprah) }
         item { PreviousExpertCard("Expert 2", R.drawable.linda_p) }
-        item { PreviousExpertCard("Expert 3", R.drawable.oprah) }
-        item { PreviousExpertCard("Expert 4", R.drawable.oprah) }
+        item { PreviousExpertCard("Expert 3", R.drawable.sofie_linde) }
+        item { PreviousExpertCard("Expert 4", R.drawable.hella_joof) }
+        item { PreviousExpertCard("Ask Oprah!", R.drawable.oprah) }
+        item { PreviousExpertCard("Expert 2", R.drawable.linda_p) }
+        item { PreviousExpertCard("Expert 3", R.drawable.sofie_linde) }
+        item { PreviousExpertCard("Expert 4", R.drawable.hella_joof) }
+        item { PreviousExpertCard("Expert 3", R.drawable.sofie_linde) }
+        item { PreviousExpertCard("Expert 4", R.drawable.hella_joof) }
     }
 }
 
