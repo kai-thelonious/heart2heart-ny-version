@@ -22,9 +22,12 @@ import com.example.heart2heart_ny_version.R
 
 val mainColor = Color(0xFFF39FC2)
 
-val OverskriftBG = FontFamily(
+val Skrifttype = FontFamily(
     Font(R.font.bricolage_grotesque_regular, FontWeight.Normal),
-    Font(R.font.bricolage_grotesque_bold, FontWeight.Bold)
+    Font(R.font.bricolage_grotesque_bold, FontWeight.Bold),
+    Font(R.font.poppins_medium, FontWeight.Medium),
+    Font(R.font.poppins_semibold, FontWeight.SemiBold)
+
 )
 
 @Composable
@@ -38,7 +41,7 @@ fun MainScreen(navController: NavController) {
                 text = "Brevkasse",
                 color = Color.Black,
                 fontSize = 48.sp,
-                fontFamily = OverskriftBG,
+                fontFamily = Skrifttype,
                 fontWeight = FontWeight.Bold
             )
         }
@@ -48,7 +51,7 @@ fun MainScreen(navController: NavController) {
                 text = "Ugens ekspert",
                 color = Color.Black,
                 fontSize = 20.sp,
-                fontFamily = OverskriftBG,
+                fontFamily = Skrifttype,
                 fontWeight = FontWeight.SemiBold
             )
         }
@@ -85,8 +88,20 @@ fun ExpertCard(navController: NavController, mainColor: Color) {
             )
 
             Column {
-                Text("Linda P")
-                Text("Lorem ipsum dolor sit lorem ipsum Lorem ipsum dolor sit lorem ipsum ")
+                Text(
+                    text = "Linda P",
+                    color = Color.Black,
+                    fontSize = 16.sp,
+                    fontFamily = Skrifttype,
+                    fontWeight = FontWeight.Medium
+                )
+                Text(
+                    text = "Lorem ipsum dolor sit lorem ipsum Lorem ipsum dolor sit lorem ipsum",
+                    color = Color.Black,
+                    fontSize = 12.sp,
+                    fontFamily = Skrifttype,
+                    fontWeight = FontWeight.Normal
+                )
             }
         }
     }
