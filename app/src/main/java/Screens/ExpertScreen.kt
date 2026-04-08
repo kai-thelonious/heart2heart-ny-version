@@ -19,8 +19,6 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
-import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -30,6 +28,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -62,7 +61,6 @@ fun ExpertScreen(navController: NavController) {
             Text("Back", fontSize = 18.sp)
         }
 
-        // Sent message (left-aligned, no avatar)
         Box(
             modifier = Modifier
                 .fillMaxWidth(0.8f)
@@ -72,26 +70,20 @@ fun ExpertScreen(navController: NavController) {
         ) {
             Text(
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-                fontSize = 16.sp
+                fontSize = 16.sp,
+                fontStyle = FontStyle.Italic
             )
         }
 
         Spacer(Modifier.height(16.dp))
 
-        // Received message (right-aligned, with avatar + chevron)
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.End,
             verticalAlignment = Alignment.CenterVertically
         ) {
-//            Icon(
-//                imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
-//                contentDescription = null,
-//                tint = Color.Gray
-//            )
-//            Spacer(Modifier.width(8.dp))
             Image(
-                painter = painterResource(R.drawable.ic_launcher_foreground), // placeholder
+                painter = painterResource(R.drawable.linda_p_rw),
                 contentDescription = "Avatar",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
