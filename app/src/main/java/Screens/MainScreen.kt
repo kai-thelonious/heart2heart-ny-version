@@ -64,11 +64,28 @@ fun MainScreen(navController: NavController) {
             )
         }
 
+
         item(span = { GridItemSpan(maxLineSpan) }) {
             ExpertCard(navController = navController, mainColor = mainColor)
         }
 
-        item { PreviousExpertCard("Ask Oprah!", R.drawable.oprah) }
+        item(span = { GridItemSpan(maxLineSpan) }) {
+            Spacer(modifier = Modifier.height(8.dp)) // Mere mellemrum imellem boks og næste overskrift (Tidligere eksperter)
+        }
+
+        item(span = { GridItemSpan(maxLineSpan) }) {
+            Text(
+                text = "Tidligere eksperter",
+                color = Color.Black,
+                fontSize = 20.sp,
+                fontFamily = Skrifttype,
+                fontWeight = FontWeight.SemiBold
+            )
+        }
+
+        item { PreviousExpertCard("Ask Oprah!",
+
+            R.drawable.oprah) }
         item { PreviousExpertCard("Expert 2", R.drawable.linda_p) }
         item { PreviousExpertCard("Expert 3", R.drawable.sofie_linde) }
         item { PreviousExpertCard("Expert 4", R.drawable.hella_joof) }
