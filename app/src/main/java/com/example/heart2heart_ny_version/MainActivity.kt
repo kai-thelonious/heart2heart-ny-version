@@ -51,6 +51,9 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+
+// kommentar
+
 val mainColor = Color(0xFFF39FC2)
 val OverskriftBG = FontFamily(
     Font(R.font.bricolage_grotesque_extralight, FontWeight.ExtraLight),
