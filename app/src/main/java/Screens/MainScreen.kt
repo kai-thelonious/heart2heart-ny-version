@@ -27,6 +27,7 @@ import androidx.navigation.NavController
 import com.example.heart2heart_ny_version.R
 
 val mainColor = Color(0xFFF39FC2)
+val backgroundColor = Color(0xFFFEF8EC)
 
 val Skrifttype = FontFamily(
     Font(R.font.bricolage_grotesque_regular, FontWeight.Normal),
@@ -39,7 +40,12 @@ val Skrifttype = FontFamily(
 fun MainScreen(navController: NavController) {
     LazyVerticalGrid(
         columns = GridCells.Fixed(2),
-        modifier = Modifier.padding(40.dp),
+        modifier = Modifier
+            .fillMaxSize()
+            .background((backgroundColor))
+            .padding(40.dp)
+
+        ,
         horizontalArrangement = Arrangement.spacedBy(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
