@@ -33,7 +33,6 @@ val Skrifttype = FontFamily(
     Font(R.font.bricolage_grotesque_bold, FontWeight.Bold),
     Font(R.font.poppins_medium, FontWeight.Medium),
     Font(R.font.poppins_semibold, FontWeight.SemiBold)
-
 )
 
 @Composable
@@ -68,6 +67,7 @@ fun MainScreen(navController: NavController) {
         item(span = { GridItemSpan(maxLineSpan) }) {
             ExpertCard(navController = navController, mainColor = mainColor)
         }
+
         item { PreviousExpertCard("Ask Oprah!", R.drawable.oprah) }
         item { PreviousExpertCard("Expert 2", R.drawable.linda_p) }
         item { PreviousExpertCard("Expert 3", R.drawable.sofie_linde) }
@@ -78,6 +78,7 @@ fun MainScreen(navController: NavController) {
         item { PreviousExpertCard("Expert 4", R.drawable.hella_joof) }
         item { PreviousExpertCard("Expert 3", R.drawable.sofie_linde) }
         item { PreviousExpertCard("Expert 4", R.drawable.hella_joof) }
+
     }
 }
 
@@ -98,14 +99,12 @@ fun ExpertCard(navController: NavController, mainColor: Color) {
             Modifier.padding(24.dp),
             horizontalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-
             Image(
                 painter = painterResource(id = R.drawable.linda_p),
                 contentDescription = "Expert image",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.size(width = 112.dp, height = 152.dp)
             )
-
             Column {
                 Text(
                     text = "Linda P",
@@ -152,11 +151,12 @@ fun PreviousExpertCard(text: String, @DrawableRes imageRes: Int) {
         Text(
             text = text,
             color = Color.White,
+            fontFamily = Skrifttype,
+            fontWeight = FontWeight.Normal,
             modifier = Modifier
                 .align(Alignment.BottomStart)
                 .padding(horizontal = 16.dp, vertical = 8.dp)
         )
-
     }
 }
 
