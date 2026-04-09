@@ -88,16 +88,34 @@ fun MainScreen(navController: NavController) {
             )
         }
 
-        item { PreviousExpertCard("Ask Oprah!", R.drawable.oprah) }
-        item { PreviousExpertCard("Expert 2", R.drawable.linda_p) }
-        item { PreviousExpertCard("Expert 3", R.drawable.sofie_linde) }
-        item { PreviousExpertCard("Expert 4", R.drawable.hella_joof) }
-        item { PreviousExpertCard("Ask Oprah!", R.drawable.oprah) }
-        item { PreviousExpertCard("Expert 2", R.drawable.linda_p) }
-        item { PreviousExpertCard("Expert 3", R.drawable.sofie_linde) }
-        item { PreviousExpertCard("Expert 4", R.drawable.hella_joof) }
-        item { PreviousExpertCard("Expert 3", R.drawable.sofie_linde) }
-        item { PreviousExpertCard("Expert 4", R.drawable.hella_joof) }
+        item { PreviousExpertCard("Ask Oprah!", R.drawable.oprah) {
+            navController.navigate("ArchiveScreen")
+        } }
+        item { PreviousExpertCard("Expert 2", R.drawable.linda_p) {
+            navController.navigate("ArchiveScreen")} }
+        item { PreviousExpertCard("Expert 3", R.drawable.sofie_linde) {
+            navController.navigate("ArchiveScreen")
+        } }
+        item { PreviousExpertCard("Expert 4", R.drawable.hella_joof){
+            navController.navigate("ArchiveScreen")
+        } }
+        item { PreviousExpertCard("Ask Oprah!", R.drawable.oprah) {
+            navController.navigate("ArchiveScreen")
+        } }
+        item { PreviousExpertCard("Expert 2", R.drawable.linda_p) {
+            navController.navigate("ArchiveScreen")
+        } }
+        item { PreviousExpertCard("Expert 3", R.drawable.sofie_linde) {
+            navController.navigate("ArchiveScreen")
+        } }
+        item { PreviousExpertCard("Expert 4", R.drawable.hella_joof) {
+            navController.navigate("ArchiveScreen")
+        } }
+        item { PreviousExpertCard("Expert 3", R.drawable.sofie_linde)
+        {navController.navigate("ArchiveScreen")}}
+        item { PreviousExpertCard("Expert 4", R.drawable.hella_joof) {
+            navController.navigate("ArchiveScreen")
+        } }
 
     }
 }
@@ -146,12 +164,13 @@ fun ExpertCard(navController: NavController, mainColor: Color) {
 }
 
 @Composable
-fun PreviousExpertCard(text: String, @DrawableRes imageRes: Int) {
+fun PreviousExpertCard(text: String, @DrawableRes imageRes: Int, onClick: () -> Unit) {
     Box(
         modifier = Modifier
             .size(width = 168.dp, height = 136.dp)
             .background(color = Color.White)
-    ) {
+            .clickable { onClick()
+            }) {
         Image(
             painter = painterResource(id = imageRes),
             contentDescription = "oprah",
