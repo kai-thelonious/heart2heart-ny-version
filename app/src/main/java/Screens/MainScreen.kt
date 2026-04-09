@@ -9,10 +9,12 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
@@ -51,6 +53,7 @@ fun MainScreen(navController: NavController) {
     ) {
 
         item(span = { GridItemSpan(maxLineSpan) }) {
+
             Text(
                 text = "Brevkasse",
                 color = Color.Black,
@@ -61,6 +64,7 @@ fun MainScreen(navController: NavController) {
         }
 
         item(span = { GridItemSpan(maxLineSpan) }) {
+
             Text(
                 text = "Ugens ekspert",
                 color = Color.Black,
@@ -127,6 +131,7 @@ fun ExpertCard(navController: NavController, mainColor: Color) {
         modifier = Modifier
             .fillMaxWidth()
             .height(207.dp)
+            .clip(RoundedCornerShape(7.dp))
             .background(color = mainColor)
             .clickable {
                 // Naviger til ExpertScreen når boksen trykkes
@@ -169,6 +174,7 @@ fun PreviousExpertCard(text: String, @DrawableRes imageRes: Int, onClick: () -> 
         modifier = Modifier
             .size(width = 168.dp, height = 136.dp)
             .background(color = Color.White)
+            .clip(RoundedCornerShape(8.dp))
             .clickable { onClick()
             }) {
         Image(
