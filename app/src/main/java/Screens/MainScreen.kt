@@ -9,10 +9,12 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
@@ -26,9 +28,9 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.heart2heart_ny_version.R
 
+//FARVER OG SKRIFTTYPER
 val mainColor = Color(0xFFF39FC2)
 val backgroundColor = Color(0xFFFEF8EC)
-
 val Skrifttype = FontFamily(
     Font(R.font.bricolage_grotesque_regular, FontWeight.Normal),
     Font(R.font.bricolage_grotesque_bold, FontWeight.Bold),
@@ -51,6 +53,7 @@ fun MainScreen(navController: NavController) {
     ) {
 
         item(span = { GridItemSpan(maxLineSpan) }) {
+
             Text(
                 text = "Brevkasse",
                 color = Color.Black,
@@ -61,6 +64,7 @@ fun MainScreen(navController: NavController) {
         }
 
         item(span = { GridItemSpan(maxLineSpan) }) {
+
             Text(
                 text = "Ugens ekspert",
                 color = Color.Black,
@@ -88,18 +92,19 @@ fun MainScreen(navController: NavController) {
             )
         }
 
-        item { PreviousExpertCard("Ask Oprah!", R.drawable.oprah) {
+        item { PreviousExpertCard("Oprah", R.drawable.oprah) {
             navController.navigate("ArchiveScreen")
         } }
-        item { PreviousExpertCard("Expert 2", R.drawable.linda_p) {
+        item { PreviousExpertCard("Linda P", R.drawable.linda_p) {
             navController.navigate("ArchiveScreen")} }
-        item { PreviousExpertCard("Expert 3", R.drawable.sofie_linde) {
+
+        item { PreviousExpertCard("Sofie Linde", R.drawable.sofie_linde) {
             navController.navigate("ArchiveScreen")
         } }
-        item { PreviousExpertCard("Expert 4", R.drawable.hella_joof){
+        item { PreviousExpertCard("Hella Joof", R.drawable.hella_joof){
             navController.navigate("ArchiveScreen")
         } }
-        item { PreviousExpertCard("Ask Oprah!", R.drawable.oprah) {
+        item { PreviousExpertCard("Expert 1", R.drawable.oprah) {
             navController.navigate("ArchiveScreen")
         } }
         item { PreviousExpertCard("Expert 2", R.drawable.linda_p) {
@@ -127,6 +132,7 @@ fun ExpertCard(navController: NavController, mainColor: Color) {
         modifier = Modifier
             .fillMaxWidth()
             .height(207.dp)
+            .clip(RoundedCornerShape(7.dp))
             .background(color = mainColor)
             .clickable {
                 // Naviger til ExpertScreen når boksen trykkes
@@ -147,14 +153,14 @@ fun ExpertCard(navController: NavController, mainColor: Color) {
                 Text(
                     text = "Linda P",
                     color = Color.Black,
-                    fontSize = 16.sp,
+                    fontSize = 22.sp,
                     fontFamily = Skrifttype,
                     fontWeight = FontWeight.Medium
                 )
                 Text(
-                    text = "Lorem ipsum dolor sit lorem ipsum Lorem ipsum dolor sit lorem ipsum",
+                    text = "Med masser livserfaring, kan Linda hjælpe med alt fra hverdagsdilemmaer til store livsspørgsmål. ",
                     color = Color.Black,
-                    fontSize = 12.sp,
+                    fontSize = 15.sp,
                     fontFamily = Skrifttype,
                     fontWeight = FontWeight.Normal
                 )
@@ -169,6 +175,7 @@ fun PreviousExpertCard(text: String, @DrawableRes imageRes: Int, onClick: () -> 
         modifier = Modifier
             .size(width = 168.dp, height = 136.dp)
             .background(color = Color.White)
+            .clip(RoundedCornerShape(8.dp))
             .clickable { onClick()
             }) {
         Image(
