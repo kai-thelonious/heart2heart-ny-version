@@ -1,6 +1,7 @@
 package com.example.heart2heart_ny_version.Screens
 
 import androidx.annotation.DrawableRes
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -12,14 +13,17 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
-import androidx.compose.material3.Icon
-import androidx.compose.material3.Text
+import androidx.compose.material.icons.filled.Face
+import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.Info
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -152,65 +156,156 @@ fun MainScreen(navController: NavController) {
 
 @Composable
 fun ExpertCard(navController: NavController, mainColor: Color) {
-    Box(
-        contentAlignment = Alignment.Center,
+    val solidMain = Color(0xFFF39FC2)
+    
+    Card(
         modifier = Modifier
             .fillMaxWidth()
-            .wrapContentHeight()
-            .clip(RoundedCornerShape(7.dp))
-            .background(color = mainColor)
-            .clickable {
-                // Naviger til ExpertScreen når boksen trykkes
-                navController.navigate("ExpertScreen")
-            }
+            .padding(vertical = 8.dp),
+        shape = RoundedCornerShape(32.dp),
+        colors = CardDefaults.cardColors(containerColor = Color.White),
+        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
+        border = BorderStroke(1.dp, solidMain.copy(alpha = 0.2f))
     ) {
-        Row(
-            Modifier.padding(0.dp),
-            horizontalArrangement = Arrangement.spacedBy(16.dp)
+        Column(
+            modifier = Modifier
+                .clickable { navController.navigate("ExpertScreen") }
+                .padding(24.dp)
         ) {
-            Image(
-                painter = painterResource(id = R.drawable.puk_damsgard),
-                contentDescription = "Expert image",
-                contentScale = ContentScale.Crop,
-                modifier = Modifier.size(width = 140.dp, height = 200.dp)
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.Top
+            ) {
+                Column(modifier = Modifier.weight(1f)) {
+                    Surface(
+                        color = solidMain,
+                        shape = RoundedCornerShape(50)
+                    ) {
+                        Text(
+                            text = "UGENS EKSPERT",
+                            color = Color.White,
+                            fontSize = 10.sp,
+                            fontWeight = FontWeight.Bold,
+                            fontFamily = Skrifttype,
+                            modifier = Modifier.padding(horizontal = 12.dp, vertical = 4.dp),
+                            letterSpacing = 1.sp
+                        )
+                    }
+                    Spacer(modifier = Modifier.height(12.dp))
+                    Text(
+                        text = "Puk Damsgård",
+                        fontSize = 28.sp,
+                        fontWeight = FontWeight.Bold,
+                        fontFamily = Skrifttype,
+                        color = Color(0xFF2D2D2D)
+                    )
+                    Text(
+                        text = "Korrespondent & Forfatter",
+                        fontSize = 14.sp,
+                        fontFamily = Skrifttype,
+                        color = Color.Gray,
+                        fontWeight = FontWeight.Medium
+                    )
+                }
+
+                Image(
+                    painter = painterResource(id = R.drawable.puk_damsgard),
+                    contentDescription = "Puk Damsgård",
+                    contentScale = ContentScale.Crop,
+                    modifier = Modifier
+                        .size(90.dp)
+                        .clip(RoundedCornerShape(20.dp))
+                )
+            }
+
+            Spacer(modifier = Modifier.height(20.dp))
+
+            Text(
+                text = "Puk er kendt for sin utrolige evne til at finde menneskelighed i verdens brændpunkter. Hendes svar i brevkassen bærer præg af en dyb kærlighed til mennesket og en ukuelig tro på resiliens.",
+                fontSize = 15.sp,
+                lineHeight = 22.sp,
+                fontFamily = Skrifttype,
+                color = Color(0xFF4A4A4A)
             )
-            Column(verticalArrangement = Arrangement.Center){
-                Text(
-                    text = "Puk Damsgård",
-                    color = Color.Black,
-                    fontSize = 22.sp,
-                    fontFamily = Skrifttype,
-                    fontWeight = FontWeight.Medium,
-                    modifier = Modifier.padding(top = 16.dp)
+
+            Spacer(modifier = Modifier.height(24.dp))
+
+            // Specialties section with flair
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                ExpertTrait(
+                    icon = Icons.Default.Favorite,
+                    title = "Mod",
+                    color = solidMain
                 )
-                Spacer(modifier = Modifier.height(24.dp))
-                Text(
-                    text = "Med masser livserfaring, kan Puk hjælpe med alt fra hverdagsdilemmaer til store livsspørgsmål. ",
-                    color = Color.Black,
-                    fontSize = 15.sp,
-                    fontFamily = Skrifttype,
-                    fontWeight = FontWeight.Normal,
-                    modifier = Modifier.padding(end = 16.dp)
+                ExpertTrait(
+                    icon = Icons.Default.Face,
+                    title = "Livsvisdom",
+                    color = Color(0xFFB8E0D2)
                 )
+                ExpertTrait(
+                    icon = Icons.Default.Info,
+                    title = "Nærvær",
+                    color = Color(0xFFEAC4D5)
+                )
+            }
+
+            Spacer(modifier = Modifier.height(24.dp))
+
+            // Action section
+            Surface(
+                color = Color(0xFFE8E8E8),
+                shape = RoundedCornerShape(16.dp),
+                modifier = Modifier.fillMaxWidth()
+            ) {
                 Row(
+                    modifier = Modifier.padding(16.dp),
                     verticalAlignment = Alignment.CenterVertically,
-                    modifier = Modifier.padding(top = 16.dp, end = 16.dp)
+                    horizontalArrangement = Arrangement.SpaceBetween
                 ) {
                     Text(
-                        text = "Tryk for at se mere",
-                        color = Color.Black,
-                        fontSize = 15.sp,
+                        text = "Se Puks svar & stil et spørgsmål",
+                        fontSize = 14.sp,
+                        fontWeight = FontWeight.SemiBold,
                         fontFamily = Skrifttype,
-                        fontWeight = FontWeight.Normal
+                        color = Color(0xFF2D2D2D)
                     )
                     Icon(
                         imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
                         contentDescription = null,
-                        modifier = Modifier.size(20.dp)
+                        tint = Color.Black
                     )
                 }
             }
         }
+    }
+}
+
+@Composable
+fun ExpertTrait(icon: ImageVector, title: String, color: Color) {
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        modifier = Modifier
+            .background(color.copy(alpha = 0.15f), RoundedCornerShape(12.dp))
+            .padding(horizontal = 10.dp, vertical = 6.dp)
+    ) {
+        Icon(
+            imageVector = icon,
+            contentDescription = null,
+            tint = color,
+            modifier = Modifier.size(14.dp)
+        )
+        Spacer(modifier = Modifier.width(6.dp))
+        Text(
+            text = title,
+            fontSize = 11.sp,
+            fontWeight = FontWeight.Bold,
+            fontFamily = Skrifttype,
+            color = Color(0xFF4A4A4A)
+        )
     }
 }
 
