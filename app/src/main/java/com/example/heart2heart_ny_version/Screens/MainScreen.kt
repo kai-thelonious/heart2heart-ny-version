@@ -39,6 +39,7 @@ import com.example.heart2heart_ny_version.R
 //FARVER OG SKRIFTTYPER
 val mainColor = Color(0x59F39FC2)
 val backgroundColor = Color(0xFFF8E1D0)
+val cardBackgroundColor = Color(0xFFFDCBA6)
 val Skrifttype = FontFamily(
     Font(R.font.bricolage_grotesque_regular, FontWeight.Normal),
     Font(R.font.bricolage_grotesque_bold, FontWeight.Bold),
@@ -163,7 +164,7 @@ fun ExpertCard(navController: NavController, mainColor: Color) {
             .fillMaxWidth()
             .padding(vertical = 8.dp),
         shape = RoundedCornerShape(32.dp),
-        colors = CardDefaults.cardColors(containerColor = Color.White),
+        colors = CardDefaults.cardColors(containerColor = cardBackgroundColor),
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
         border = BorderStroke(1.dp, solidMain.copy(alpha = 0.2f))
     ) {
