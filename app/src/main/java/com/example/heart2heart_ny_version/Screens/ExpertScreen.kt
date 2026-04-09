@@ -1,4 +1,4 @@
-package Screens
+package com.example.heart2heart_ny_version.Screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background

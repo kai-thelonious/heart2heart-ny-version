@@ -1,11 +1,10 @@
-package Screens
+package com.example.heart2heart_ny_version.Screens
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -22,7 +21,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -92,35 +90,56 @@ fun MainScreen(navController: NavController) {
             )
         }
 
-        item { PreviousExpertCard("Oprah", R.drawable.oprah) {
-            navController.navigate("ArchiveScreen")
-        } }
-        item { PreviousExpertCard("Linda P", R.drawable.linda_p) {
-            navController.navigate("ArchiveScreen")} }
-
-        item { PreviousExpertCard("Sofie Linde", R.drawable.sofie_linde) {
-            navController.navigate("ArchiveScreen")
-        } }
-        item { PreviousExpertCard("Hella Joof", R.drawable.hella_joof){
-            navController.navigate("ArchiveScreen")
-        } }
-        item { PreviousExpertCard("Expert 1", R.drawable.oprah) {
-            navController.navigate("ArchiveScreen")
-        } }
-        item { PreviousExpertCard("Expert 2", R.drawable.linda_p) {
-            navController.navigate("ArchiveScreen")
-        } }
-        item { PreviousExpertCard("Expert 3", R.drawable.sofie_linde) {
-            navController.navigate("ArchiveScreen")
-        } }
-        item { PreviousExpertCard("Expert 4", R.drawable.hella_joof) {
-            navController.navigate("ArchiveScreen")
-        } }
-        item { PreviousExpertCard("Expert 3", R.drawable.sofie_linde)
-        {navController.navigate("ArchiveScreen")}}
-        item { PreviousExpertCard("Expert 4", R.drawable.hella_joof) {
-            navController.navigate("ArchiveScreen")
-        } }
+        item {
+            PreviousExpertCard("Oprah", R.drawable.oprah) {
+                navController.navigate("ArchiveScreen/oprah")
+            }
+        }
+        item {
+            PreviousExpertCard("Linda P", R.drawable.linda_p) {
+                navController.navigate("ArchiveScreen/linda_p")
+            }
+        }
+        item {
+            PreviousExpertCard("Sofie Linde", R.drawable.sofie_linde) {
+                navController.navigate("ArchiveScreen/sofie_linde")
+            }
+        }
+        item {
+            PreviousExpertCard("Hella Joof", R.drawable.hella_joof) {
+                navController.navigate("ArchiveScreen/hella_joof")
+            }
+        }
+        item {
+            PreviousExpertCard("Michelle Obama", R.drawable.michelle_obama) {
+                navController.navigate("ArchiveScreen/michelle_obama")
+            }
+        }
+        item {
+            PreviousExpertCard("Renée Toft Simonsen", R.drawable.renee_toft_simonsen) {
+                navController.navigate("ArchiveScreen/renee_toft")
+            }
+        }
+        item {
+            PreviousExpertCard("Emma Holten", R.drawable.emma_holten) {
+                navController.navigate("ArchiveScreen/emma_holten")
+            }
+        }
+        item {
+            PreviousExpertCard("Maria H", R.drawable.maria_h) {
+                navController.navigate("ArchiveScreen/maria_h")
+            }
+        }
+        item {
+            PreviousExpertCard("Iben Hjejle", R.drawable.iben_hjejle) {
+                navController.navigate("ArchiveScreen/iben_hjejle")
+            }
+        }
+        item {
+            PreviousExpertCard("Bodil Jørgensen", R.drawable.bodil_jorgensen) {
+                navController.navigate("ArchiveScreen/bodil_jorgensen")
+            }
+        }
 
     }
 }
@@ -144,21 +163,21 @@ fun ExpertCard(navController: NavController, mainColor: Color) {
             horizontalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             Image(
-                painter = painterResource(id = R.drawable.linda_p),
+                painter = painterResource(id = R.drawable.puk_damsgard),
                 contentDescription = "Expert image",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.size(width = 112.dp, height = 152.dp)
             )
             Column {
                 Text(
-                    text = "Linda P",
+                    text = "Puk Damsgård",
                     color = Color.Black,
                     fontSize = 22.sp,
                     fontFamily = Skrifttype,
                     fontWeight = FontWeight.Medium
                 )
                 Text(
-                    text = "Med masser livserfaring, kan Linda hjælpe med alt fra hverdagsdilemmaer til store livsspørgsmål. ",
+                    text = "Med masser livserfaring, kan Puk hjælpe med alt fra hverdagsdilemmaer til store livsspørgsmål. ",
                     color = Color.Black,
                     fontSize = 15.sp,
                     fontFamily = Skrifttype,
