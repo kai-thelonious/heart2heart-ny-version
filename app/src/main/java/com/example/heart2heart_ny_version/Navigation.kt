@@ -1,5 +1,6 @@
 package com.example.heart2heart_ny_version
 
+import Screens.ExpertAnswer
 import Screens.MainScreen
 import Screens.ExpertScreen
 import androidx.compose.runtime.Composable
@@ -25,7 +26,10 @@ fun Navigation() {
         }
         composable("ArchiveScreen") {
             ArchiveScreen(navController)
-
+        }
+        composable("ExpertAnswer"){
+            ExpertAnswer(navController)
         }
     }
 }
+
