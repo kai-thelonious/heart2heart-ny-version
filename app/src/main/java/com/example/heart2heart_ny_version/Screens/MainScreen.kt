@@ -5,6 +5,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -17,10 +18,12 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -43,7 +46,7 @@ fun MainScreen(navController: NavController) {
         modifier = Modifier
             .fillMaxSize()
             .background((backgroundColor))
-            .padding(40.dp)
+            .padding(vertical = 40.dp, horizontal = 16.dp)
 
         ,
         horizontalArrangement = Arrangement.spacedBy(16.dp),
@@ -150,7 +153,7 @@ fun ExpertCard(navController: NavController, mainColor: Color) {
         contentAlignment = Alignment.Center,
         modifier = Modifier
             .fillMaxWidth()
-            .height(207.dp)
+            .wrapContentHeight()
             .clip(RoundedCornerShape(7.dp))
             .background(color = mainColor)
             .clickable {
@@ -159,29 +162,32 @@ fun ExpertCard(navController: NavController, mainColor: Color) {
             }
     ) {
         Row(
-            Modifier.padding(24.dp),
+            Modifier.padding(0.dp),
             horizontalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             Image(
                 painter = painterResource(id = R.drawable.puk_damsgard),
                 contentDescription = "Expert image",
                 contentScale = ContentScale.Crop,
-                modifier = Modifier.size(width = 112.dp, height = 152.dp)
+                modifier = Modifier.size(width = 140.dp, height = 200.dp)
             )
-            Column {
+            Column(verticalArrangement = Arrangement.Center){
                 Text(
                     text = "Puk Damsgård",
                     color = Color.Black,
                     fontSize = 22.sp,
                     fontFamily = Skrifttype,
-                    fontWeight = FontWeight.Medium
+                    fontWeight = FontWeight.Medium,
+                    modifier = Modifier.padding(top = 16.dp)
                 )
+                Spacer(modifier = Modifier.height(24.dp))
                 Text(
                     text = "Med masser livserfaring, kan Puk hjælpe med alt fra hverdagsdilemmaer til store livsspørgsmål. ",
                     color = Color.Black,
                     fontSize = 15.sp,
                     fontFamily = Skrifttype,
-                    fontWeight = FontWeight.Normal
+                    fontWeight = FontWeight.Normal,
+                    modifier = Modifier.padding(end = 16.dp)
                 )
             }
         }
@@ -193,23 +199,23 @@ fun PreviousExpertCard(text: String, @DrawableRes imageRes: Int, onClick: () -> 
     Box(
         modifier = Modifier
             .size(width = 168.dp, height = 136.dp)
-            .background(color = Color.White)
-            .clip(RoundedCornerShape(8.dp))
-            .clickable { onClick()
-            }) {
+            .clip(RoundedCornerShape(16.dp)) // Blødere, moderne hjørner
+            .clickable { onClick() }
+    ) {
         Image(
             painter = painterResource(id = imageRes),
-            contentDescription = "oprah",
+            contentDescription = text,
             contentScale = ContentScale.Crop,
             modifier = Modifier.matchParentSize()
         )
-        Spacer(
+        // Subtil mørk gradient i bunden for bedre læsbarhed af teksten
+        Box(
             modifier = Modifier
-                .size(width = 168.dp, height = 136.dp)
+                .matchParentSize()
                 .background(
                     brush = Brush.verticalGradient(
-                        0.48f to Color(0x00000000), // 48% stop: Fully Transparent Black
-                        0.88f to Color(0xFF1C1C1C)  // 88% stop: Fully Opaque Dark Gray
+                        colors = listOf(Color.Transparent, Color.Black.copy(alpha = 0.6f)),
+                        startY = 60f
                     )
                 )
         )
@@ -217,16 +223,17 @@ fun PreviousExpertCard(text: String, @DrawableRes imageRes: Int, onClick: () -> 
             text = text,
             color = Color.White,
             fontFamily = Skrifttype,
-            fontWeight = FontWeight.Normal,
+            fontWeight = FontWeight.Medium,
+            fontSize = 15.sp,
             modifier = Modifier
                 .align(Alignment.BottomStart)
-                .padding(horizontal = 16.dp, vertical = 8.dp)
+                .padding(horizontal = 12.dp, vertical = 10.dp)
         )
     }
 }
 
-//@Preview(showBackground = true)
-//@Composable
-//fun PreviewComponent() {
-//    PreviousExpertCard()
-//}
+@Preview(showBackground = true)
+@Composable
+fun PreviewComponent() {
+    ExpertCard(navController = NavController(LocalContext.current), mainColor = mainColor)
+}

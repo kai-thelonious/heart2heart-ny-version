@@ -5,6 +5,49 @@ import com.example.heart2heart_ny_version.R
 object ExpertRepository {
     val experts = listOf(
         Expert(
+            id = "puk_damsgard",
+            name = "Puk Damsgård",
+            description = "Journalist og forfatter med stor erfaring i menneskelige skæbner og resiliens.",
+            imageRes = R.drawable.puk_damsgard,
+            questions = listOf(
+                Question(
+                    "p1", "Mod i svære tider",
+                    "Hvordan finder man mod til at fortsætte, når alt omkring en føles usikkert?",
+                    "Anonym, 28 år",
+                    "Mod handler ikke om fravær af frygt, men om at handle på trods af den. Se på de små sejre i hverdagen og husk, at vi mennesker er utroligt modstandsdygtige.",
+                    "Mental styrke"
+                ),
+                Question(
+                    "p2", "At lytte til andre",
+                    "Jeg vil gerne blive bedre til at forstå folk, jeg er uenig med. Hvad er dit råd?",
+                    "Maria, 34 år",
+                    "Stil åbne spørgsmål og vær oprigtigt nysgerrig på deres 'hvorfor'. Verden bliver mindre skræmmende, når vi tør lytte til de historier, der ligger bag facaden.",
+                    "Relationer"
+                ),
+                Question(
+                    "p3", "Håndtering af frygt",
+                    "Verden føles voldsom i nyhederne. Hvordan passer man på sig selv?",
+                    "Sofie, 22 år",
+                    "Det er vigtigt at holde pauser fra nyhedsstrømmen. Ret fokus mod det nære – dine venner, din familie og de ting, du rent faktisk kan påvirke.",
+                    "Velvære"
+                ),
+                Question(
+                    "p4", "Livets store valg",
+                    "Jeg står over for en stor beslutning og er bange for at vælge forkert.",
+                    "Julie, 30 år",
+                    "Der findes sjældent én 'rigtig' vej. Hver vej fører til nye erfaringer. Stol på din mavefornemmelse, og vid at du kan navigere, uanset hvor du lander.",
+                    "Livsvalg"
+                ),
+                Question(
+                    "p5", "Meningsfuldhed",
+                    "Hvordan finder man mening i en travl hverdag?",
+                    "Lotte, 40 år",
+                    "Meningen findes ofte i forbindelsen til andre mennesker. Et lille øjebliks nærvær kan give mere mening end en hel dags præstationer.",
+                    "Livsvisdom"
+                )
+            )
+        ),
+        Expert(
             id = "oprah",
             name = "Oprah",
             description = "Ekspert i personlig udvikling og selvværd",
