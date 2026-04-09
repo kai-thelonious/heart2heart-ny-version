@@ -28,9 +28,9 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.heart2heart_ny_version.R
 
+//FARVER OG SKRIFTTYPER
 val mainColor = Color(0xFFF39FC2)
 val backgroundColor = Color(0xFFFEF8EC)
-
 val Skrifttype = FontFamily(
     Font(R.font.bricolage_grotesque_regular, FontWeight.Normal),
     Font(R.font.bricolage_grotesque_bold, FontWeight.Bold),
@@ -92,18 +92,19 @@ fun MainScreen(navController: NavController) {
             )
         }
 
-        item { PreviousExpertCard("Ask Oprah!", R.drawable.oprah) {
+        item { PreviousExpertCard("Oprah", R.drawable.oprah) {
             navController.navigate("ArchiveScreen")
         } }
-        item { PreviousExpertCard("Expert 2", R.drawable.linda_p) {
+        item { PreviousExpertCard("Linda P", R.drawable.linda_p) {
             navController.navigate("ArchiveScreen")} }
-        item { PreviousExpertCard("Expert 3", R.drawable.sofie_linde) {
+
+        item { PreviousExpertCard("Sofie Linde", R.drawable.sofie_linde) {
             navController.navigate("ArchiveScreen")
         } }
-        item { PreviousExpertCard("Expert 4", R.drawable.hella_joof){
+        item { PreviousExpertCard("Hella Joof", R.drawable.hella_joof){
             navController.navigate("ArchiveScreen")
         } }
-        item { PreviousExpertCard("Ask Oprah!", R.drawable.oprah) {
+        item { PreviousExpertCard("Expert 1", R.drawable.oprah) {
             navController.navigate("ArchiveScreen")
         } }
         item { PreviousExpertCard("Expert 2", R.drawable.linda_p) {
@@ -152,14 +153,14 @@ fun ExpertCard(navController: NavController, mainColor: Color) {
                 Text(
                     text = "Linda P",
                     color = Color.Black,
-                    fontSize = 16.sp,
+                    fontSize = 22.sp,
                     fontFamily = Skrifttype,
                     fontWeight = FontWeight.Medium
                 )
                 Text(
-                    text = "Lorem ipsum dolor sit lorem ipsum Lorem ipsum dolor sit lorem ipsum",
+                    text = "Med masser livserfaring, kan Linda hjælpe med alt fra hverdagsdilemmaer til store livsspørgsmål. ",
                     color = Color.Black,
-                    fontSize = 12.sp,
+                    fontSize = 15.sp,
                     fontFamily = Skrifttype,
                     fontWeight = FontWeight.Normal
                 )
