@@ -38,7 +38,7 @@ import com.example.heart2heart_ny_version.R
 
 //FARVER OG SKRIFTTYPER
 val mainColor = Color(0x59F39FC2)
-val backgroundColor = Color(0xFFF6D3AB)
+val backgroundColor = Color(0xFFF8E1D0)
 val Skrifttype = FontFamily(
     Font(R.font.bricolage_grotesque_regular, FontWeight.Normal),
     Font(R.font.bricolage_grotesque_bold, FontWeight.Bold),
@@ -313,7 +313,7 @@ fun ExpertTrait(icon: ImageVector, title: String, color: Color) {
 fun PreviousExpertCard(text: String, @DrawableRes imageRes: Int, onClick: () -> Unit) {
     Box(
         modifier = Modifier
-            .size(width = 168.dp, height = 136.dp)
+            .size(width = 168.dp, height = 168.dp)
             .clip(RoundedCornerShape(16.dp)) // Blødere, moderne hjørner
             .clickable { onClick() }
     ) {
