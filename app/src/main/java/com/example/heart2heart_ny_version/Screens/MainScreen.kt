@@ -10,6 +10,9 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -30,8 +33,8 @@ import androidx.navigation.NavController
 import com.example.heart2heart_ny_version.R
 
 //FARVER OG SKRIFTTYPER
-val mainColor = Color(0xFFF39FC2)
-val backgroundColor = Color(0xFFFEF8EC)
+val mainColor = Color(0x59F39FC2)
+val backgroundColor = Color(0xFFF6D3AB)
 val Skrifttype = FontFamily(
     Font(R.font.bricolage_grotesque_regular, FontWeight.Normal),
     Font(R.font.bricolage_grotesque_bold, FontWeight.Bold),
@@ -189,6 +192,23 @@ fun ExpertCard(navController: NavController, mainColor: Color) {
                     fontWeight = FontWeight.Normal,
                     modifier = Modifier.padding(end = 16.dp)
                 )
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.padding(top = 16.dp, end = 16.dp)
+                ) {
+                    Text(
+                        text = "Tryk for at se mere",
+                        color = Color.Black,
+                        fontSize = 15.sp,
+                        fontFamily = Skrifttype,
+                        fontWeight = FontWeight.Normal
+                    )
+                    Icon(
+                        imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
+                        contentDescription = null,
+                        modifier = Modifier.size(20.dp)
+                    )
+                }
             }
         }
     }
