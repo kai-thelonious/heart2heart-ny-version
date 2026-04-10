@@ -37,7 +37,7 @@ fun ExpertAnswer(navController: NavController, expertId: String?, questionId: St
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.White)
+            .background(Color(0xFFFEF8EC))
             .padding(22.dp)
             .verticalScroll(rememberScrollState())
     ) {

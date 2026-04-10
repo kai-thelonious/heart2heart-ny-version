@@ -53,7 +53,7 @@ fun MainScreen(navController: NavController) {
         columns = GridCells.Fixed(2),
         modifier = Modifier
             .fillMaxSize()
-            .background((backgroundColor))
+            .background(Color(0xFFFEF8EC))
             .padding(vertical = 40.dp, horizontal = 16.dp)
 
         ,

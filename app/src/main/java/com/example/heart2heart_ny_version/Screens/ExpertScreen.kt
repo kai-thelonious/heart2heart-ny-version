@@ -40,7 +40,7 @@ fun ExpertScreen(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(backgroundColor)
+            .background(Color(0xFFFEF8EC))
             .padding(16.dp)
     ) {
         Spacer(Modifier.height(30.dp))
